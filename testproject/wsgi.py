@@ -10,5 +10,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'testproject.settings')
 
 application = get_wsgi_application()
 
-# Vercel handler
-app = application
+# Handlers for different platforms
+app = application  # For Vercel
+# For Render, the application variable is used directly
