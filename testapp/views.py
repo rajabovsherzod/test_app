@@ -13,7 +13,10 @@ def get_questions(request):
 
 def load_questions():
     questions = []
-    excel_path = "Pedagogika Psixologiya yakuniy savollar bazasi.xlsx"
+    # Make path relative to project directory
+    import os
+    from django.conf import settings
+    excel_path = os.path.join(settings.BASE_DIR, "Pedagogika Psixologiya yakuniy savollar bazasi.xlsx")
     
     try:
         workbook = openpyxl.load_workbook(excel_path)
